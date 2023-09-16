@@ -1,6 +1,6 @@
 {
-    "name": "openapi-zod-client",
-    "version": "1.11.1",
+    "name": "@alexop/openapi-zod-client",
+    "version": "1.11.2",
     "repository": {
         "type": "git",
         "url": "https://github.com/alexop1000/openapi-zod-client.git"

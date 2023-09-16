@@ -268,6 +268,7 @@ export const getZodiosEndpointDefinitionList = (doc: OpenAPIObject, options?: Te
                             .otherwise(() => paramItem.name),
                         explode: paramItem.explode,
                         style: paramItem.style,
+                        description: paramItem.description!,
                         type: match(paramItem.in)
                             .with("header", () => "Header")
                             .with("query", () => "Query")
