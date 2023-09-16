@@ -156,6 +156,7 @@ export const getZodiosEndpointDefinitionList = (doc: OpenAPIObject, options?: Te
                 path: replaceHyphenatedPath(path),
                 ...(options?.withAlias && { alias: operationName }),
                 description: operation.description,
+                summary: operation.summary,
                 requestFormat: "json",
                 parameters: [],
                 errors: [],
@@ -426,10 +427,11 @@ const allowedPathInValues = ["query", "header", "path"] as Array<ParameterObject
 
 export type EndpointDefinitionWithRefs = Omit<
     ZodiosEndpointDefinition<any>,
-    "response" | "parameters" | "errors" | "description"
+    "response" | "parameters" | "errors" | "description" | "summary"
 > & {
     response: string;
     description?: string | undefined;
+    summary?: string | undefined;
     parameters: Array<
         Omit<Required<ZodiosEndpointDefinition<any>>["parameters"][number], "schema"> & { schema: string }
     >;
